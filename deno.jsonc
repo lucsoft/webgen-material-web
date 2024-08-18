@@ -7,6 +7,7 @@
         ]
     },
     "imports": {
-        "webgen/": "../WebGen/"
+        "webgen/": "https://raw.githubusercontent.com/lucsoft/WebGen/7a32ec0/"
+        // "webgen/": "../WebGen/"
     }
 }

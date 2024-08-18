@@ -13,3 +13,7 @@ Currently there are only 3 Material Components implemented:
 ![Demo site of WebGen + Material Web](.github/image.png)
 
 To run this demo just run `deno run -A serve.ts` and open your browser at <http://localhost:1337>
+
+or
+
+Visit <https://webgen-material-web.lucsoft.de/>

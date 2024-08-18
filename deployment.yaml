@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webgen-material-web
+spec:
+  selector:
+    matchLabels:
+      app: webgen-material-web
+  template:
+    metadata:
+      labels:
+        app: webgen-material-web
+    spec:
+      containers:
+        - name: webgen-material-web
+          image: ghcr.io/lucsoft/webgen-material-web
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+              name: http
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ghcr
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webgen-material-web
+spec:
+  selector:
+    app: webgen-material-web
+  ports:
+    - protocol: TCP
+      port: 80
+      name: http
+      targetPort: http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webgen-material-web
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  tls:
+    - hosts:
+        - webgen-material-web.lucsoft.de
+      secretName: webgen-material-web-tls
+  rules:
+    - host: webgen-material-web.lucsoft.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webgen-material-web
+                port:
+                  name: http
