@@ -1,0 +1,12 @@
+{
+    "lock": false,
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "deno.window"
+        ]
+    },
+    "imports": {
+        "webgen/": "../WebGen/"
+    }
+}
