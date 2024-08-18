@@ -1,5 +1,7 @@
 # WebGen + Material Web
 
+[![Powered by WebGen](.github/powered-by-webgen.svg 'A badge that displays: Powered by WebGen')](https://github.com/lucsoft/webgen)
+
 This is a toy project to use Material Web Components with the WebGen Core API.
 
 Currently there are only 3 Material Components implemented:
