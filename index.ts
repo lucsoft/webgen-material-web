@@ -1,18 +1,29 @@
-import { Icon } from "./components/icon.ts";
+import { Tabs } from "./components/tabs.ts";
 import './dark.css';
 import { asRef, Box, Button, Checkbox, Content, Grid, Label, ref, TextBox } from "./mod.ts";
 
 const counter = asRef(0);
 const checkbox = asRef(false);
 const data = asRef("Hello World");
+const selectedTab = asRef(0);
 document.body.append(
     Box(
         Content(
-            Icon("tune"),
             Label(ref`${counter}`)
                 .setTextSize("9xl")
                 .setJustifySelf("center")
                 .setMargin("1rem 0"),
+            Tabs(selectedTab, [
+                {
+                    label: "Tab 1",
+                    icon: "home"
+                },
+                {
+                    label: "Tab 2",
+                    icon: "settings"
+                }
+            ]),
+            Label(ref`Selected Tab: ${selectedTab}`),
             Grid(
                 Button("Hello World!")
                     .onClick(() => {

@@ -9,6 +9,8 @@ Currently there are only 3 Material Components implemented:
 - Button
 - Checkbox
 - TextBox
+- Icon
+- Tabs
 
 ## Demo
 

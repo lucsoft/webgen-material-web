@@ -5,7 +5,6 @@ import { alwaysRef, asWebGenComponent, HTMLComponent, Refable } from "webgen/cor
 class IconComponent extends HTMLComponent {
     constructor(icon: Refable<string>) {
         super();
-        this.style.display = 'contents';
         const iconElement = document.createElement('md-icon');
         this.useListener(alwaysRef(icon), icon => {
             iconElement.innerText = icon;
