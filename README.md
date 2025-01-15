@@ -13,6 +13,7 @@ Currently there are only 3 Material Components implemented:
 - Tabs
 - Dialog
 - Select
+- Switch
 
 ## Demo
 
