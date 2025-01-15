@@ -1,12 +1,14 @@
+import { Icon } from "./components/icon.ts";
+import './dark.css';
 import { asRef, Box, Button, Checkbox, Content, Grid, Label, ref, TextBox } from "./mod.ts";
 
 const counter = asRef(0);
 const checkbox = asRef(false);
 const data = asRef("Hello World");
-
 document.body.append(
     Box(
         Content(
+            Icon("tune"),
             Label(ref`${counter}`)
                 .setTextSize("9xl")
                 .setJustifySelf("center")
@@ -31,7 +33,6 @@ document.body.append(
             Label(ref`Data: ${data}`)
                 .setMargin("1rem 0")
         )
-
     )
         .setTextSize("base")
         .draw()

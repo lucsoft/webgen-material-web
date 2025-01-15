@@ -1,4 +1,4 @@
-from denoland/deno as builder
+from --platform=linux/amd64 denoland/deno as builder
 
 workdir /app
 
@@ -6,7 +6,7 @@ copy . .
 
 run deno run -A serve.ts build
 
-from joseluisq/static-web-server:2-alpine
+from --platform=linux/amd64 joseluisq/static-web-server:2-alpine
 
 expose 80
 

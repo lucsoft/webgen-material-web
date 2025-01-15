@@ -11,6 +11,8 @@ spec:
       labels:
         app: webgen-material-web
     spec:
+      nodeSelector:
+        "kubernetes.io/arch": "amd64"
       containers:
         - name: webgen-material-web
           image: ghcr.io/lucsoft/webgen-material-web
@@ -43,12 +45,13 @@ kind: Ingress
 metadata:
   name: webgen-material-web
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
+    cert-manager.io/cluster-issuer: lucsoft-allinkl
 spec:
   tls:
     - hosts:
-        - webgen-material-web.lucsoft.de
-      secretName: webgen-material-web-tls
+        - "*.lucsoft.de"
+        - "lucsoft.de"
+      secretName: lucsoft-tls
   rules:
     - host: webgen-material-web.lucsoft.de
       http:
