@@ -12,6 +12,7 @@ Currently there are only 3 Material Components implemented:
 - Icon
 - Tabs
 - Dialog
+- Select
 
 ## Demo
 
