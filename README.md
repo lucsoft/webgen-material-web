@@ -4,7 +4,7 @@
 
 This is a toy project to use Material Web Components with the WebGen Core API.
 
-Currently there are only 3 Material Components implemented:
+Currently there are only 8 Material Components implemented:
 
 - Button
 - Checkbox
